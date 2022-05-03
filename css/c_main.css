@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.header .top_banner {
+    border-bottom: 1px dotted #ddd;
+    line-height: 60px;
+}
+
+.header .span {
+    color: blue;
+    text-decoration: underline;
+}
+
+.header .i {
+    color: red;
+}
