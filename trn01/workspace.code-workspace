@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\혼자 실습"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "혼자 실습"
+	}
+}
