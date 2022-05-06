@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스를 올리면 나타나는 메뉴창 만들어보기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1 {
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+        }
+
+        nav {
+            position: relative;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            z-index: 999;
+        }
+
+        nav>ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+        }
+
+        nav>ul>li {
+            position: relative;
+            line-height: 40px;
+
+        }
+
+        nav>ul>li ul {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+            background: #fF0;
+            /* z-index: ;는 왜 여기다가 주는거지? */
+            z-index: 999;
+
+        }
+
+        /*  바로 trnasition이 적용안되는 이유는 height:auto 때문임!
+        그래서 height:auto 말고 수치를 직접 줘야함 */
+
+        nav>ul:hover>li ul {
+            /* height: auto; */
+            height: 160px;
+        }
+
+        nav::before {
+            position: absolute;
+            top: 41px;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 0px;
+            background: #fF0;
+            transition: 0.5s;
+        }
+
+        nav:hover::before {
+            height: 180px;
+        }
+
+        .visual {
+            /* position: relative를 주는 순간 메뉴가 다시 내려오지 않게 됨!
+            뒤에 있는 속성이 앞의 속성에 덮어씌워지기 때문에 그렇다! 코드가 뒤에 있어서
+            다시 나오게 하려면 z-index를 position에 넣어줘야한다! 왜그런지는 나도 모르겠는데
+            z-index를 이해하면 될까?*/
+            position: relative;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 500px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>다단 메뉴</h1>
+    <nav>
+        <ul>
+            <li><a href="">Smenu01</a>
+                <ul>
+                    <li><a href="">menu01</a></li>
+                    <li><a href="">menu02</a></li>
+                    <li><a href="">menu03</a></li>
+                    <li><a href="">menu04</a></li>
+                </ul>
+            </li>
+            <li><a href="">Smenu02</a>
+                <ul>
+                    <li><a href="">menu01</a></li>
+                    <li><a href="">menu02</a></li>
+                    <li><a href="">menu03</a></li>
+                    <li><a href="">menu04</a></li>
+                </ul>
+            </li>
+            <li><a href="">Smenu03</a>
+                <ul>
+                    <li><a href="">menu01</a></li>
+                    <li><a href="">menu02</a></li>
+                    <li><a href="">menu03</a></li>
+                    <li><a href="">menu04</a></li>
+                </ul>
+            </li>
+            <li><a href="">Smenu04</a>
+                <ul>
+                    <li><a href="">menu01</a></li>
+                    <li><a href="">menu02</a></li>
+                    <li><a href="">menu03</a></li>
+                    <li><a href="">menu04</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section class="visual">
+        slogan
+    </section>
+</body>
+
+</html>

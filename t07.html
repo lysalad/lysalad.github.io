@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover와 친해지기</title>
+    <style>
+        a {
+            color: inherit;
+        }
+
+        .hover01 {
+            color: #f00;
+            font-size: 50px;
+
+        }
+
+        .hover01:hover a {
+            color: #369;
+        }
+
+        .hover01>ul {
+            display: none;
+        }
+
+        .hover01:hover>ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hover01">
+        <a href="">하 하 하 하 하</a>
+        <ul>
+            <li><a herf="">menu01</a></li>
+            <li><a herf="">menu02</a></li>
+            <li><a herf="">menu03</a></li>
+            <li><a herf="">menu04</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
