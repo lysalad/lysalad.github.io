@@ -1,0 +1,453 @@
+/* 폰트는 두 개 사용했고(구글 웹폰트에서) 아이콘은 xeicon */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+
+/* font-family: 'Nanum Myeongjo', serif; 나눔명조 쓰려면 복사해서 사용*/
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+    position: relative;
+    /* 모든 컨테이너에다가 flex를 적용시킴 그러니까 문제가 생겼는데, 이를 해결하기 위해서 탑배너 컨테이너에다가 블록을 적용하니까 문제가 해결됨! 왜 ?!?!!?! */
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.top_banner {
+    /* padding값은 포토샵으로 알 수 있음 */
+    padding: 25px 0;
+    background: #f1f1f1;
+
+}
+
+/* 오.... 여기 문제가 해결됨 */
+.top_banner .container {
+    display: block;
+}
+
+.top_banner h2 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+
+.top_banner p {
+    /* 폰트 사이즈는 홀수일때가 더 예쁘게 출력된다 */
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+/* 박스에 inline을 넣으면 좌ㅋ우로 마진, 패딩만 적용가능함. border을 주면 아래위로 패딩이 적용된 것 처럼 보이지만 실제로는 공간이 들어가지 않음 무슨말인지 모르겠다 @.@ 그런게 있나부다 알아 볼 수 있으면 알아보자... 이렇게 되는 이유는 a라는 박스의 속성때문에! a라는 박스의 속성을 알아봐야겠움... */
+
+.top_banner a {
+    /* block을 하면 밑으로 내려감 그래서 안씀
+    display: block; */
+    /* 패딩을 조정해서 가운데에 예쁘게 하도록 만들어냄 */
+    padding: 2px 15px 4px 15px;
+    border: 1px solid #333;
+    margin: 0 0 0 20px;
+}
+
+.top_banner i {
+    position: absolute;
+    top: 0px;
+    right: 0%;
+    padding: 10px;
+    background: #333;
+    /* border-radius: 50%; */
+    color: #f1f1f1;
+    /* cursor 이건 머지...? */
+    cursor: pointer;
+}
+
+.header .gnb {
+    line-height: 100px;
+}
+
+.header .gnb nav {
+    margin: 0 0 0 auto;
+}
+
+/* .header .gnb .container {
+    justify-content: space-between;
+} */
+
+.header .gnb form {
+    margin: 0 0 0 50px;
+}
+
+nav>ul {
+    display: flex;
+    /* gap는 인터넷 익스플로러에서는 적용이 안된다 */
+    /* gap: 40px; */
+}
+
+
+/* gap 대신에 쓸 수 있는 방법은 다음과 같다. */
+
+/* nav>ul>li {
+    밑에서 비포를 적용시키면서 마진을 주기때문에 이 값도 필요없어진다. 
+    padding: 0 20px;
+} */
+
+nav>ul>li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background: #ddd;
+    margin: 0 20px;
+}
+
+#searchForm input[type='text'] {
+    /* 색을 넣으니 검색창 안의 글자가 빨간색이 됨
+    color: #f00; */
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    padding: 5px 0;
+}
+
+#searchForm button {
+    border: none;
+    outline: none;
+    /* 배경을 투명하게 하는건 transparent */
+    background: transparent;
+    font-size: 30px;
+}
+
+/* 이미지가 아니라 배경이 들어간 박스를 만들어서 배경을 돌린다! 여기서는 배경이 들어간 박스만 만들어주고 돌리는건 js에 가서 한다!*/
+.main_visual figure {
+    position: relative;
+    height: 600px;
+}
+
+.main_visual .itm01 {
+    background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.main_visual .itm02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.main_visual .itm03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+/* .main_visual figure {
+    font-size: 100px;
+    color: #ffff;
+}
+
+.main_visual figure.on {
+    color: #f00;
+} */
+
+.main_visual .container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ddd;
+
+}
+
+.main_visual figure h3 {
+    font-size: 60px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+    /* 제일 앞은 좌측으로, 두번째는 밑으로 세번째는 블러 블러값만 주면 약간,,, 네온사인비스무리한,,,*/
+    text-shadow: 0 0 5px #333;
+}
+
+.main_visual figure.itm02 h3 {
+    color: #333;
+    text-shadow: 0 0 5px #fff;
+}
+
+.main_visual figure p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+
+}
+
+.main_visual figure.itm02 p {
+    color: #333;
+    text-shadow: 0 0 0px #fff;
+}
+
+.main_visual figure a {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+    border: 1px solid #fff;
+    background: #333;
+    padding: 5px 20px 8px 20px;
+}
+
+.main_visual figure h3 {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_visual figure.on h3 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+
+.main_visual figure p {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_visual figure.on p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+
+.main_visual figure a {
+
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_visual figure.on a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+
+.main_visual .slick-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main_visual .slick-dots li {
+    /* inline-block이 무엇이냐 */
+    display: inline-block;
+    width: 80px;
+    height: 5px;
+    background: #333;
+    margin: 0 5px;
+}
+
+
+.main_visual .slick-dots li::after {
+    /* background: #f00; */
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #f00;
+
+}
+
+
+.main_visual .slick-dots li.slick-active::after {
+    /* background: #f00; */
+    width: 100%;
+    transition: 3s;
+}
+
+.main_visual .slick-dots button {
+    display: none;
+}
+
+
+/* ---------여기서부터 제품 확대--------- */
+
+
+/* 박스를 중앙에 가로로 배치하는 (구)방법, flex를 대신한다. */
+/* .basic {
+    padding: 100px 0;
+    background: #333;
+    text-align: center;
+}
+
+.dtainer {
+    width: 1230px;
+    margin: 0 auto;
+} */
+
+/* 박스를 다시 내려앉게 하는 css. 이 방법이 clear-fix라는 방법임 */
+/* .dtainer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.dtainer figure {
+    float: left;
+    /* 사진이 세 개일때 기준 33.333333%이므로 사진이 4개 5개 있으면 또 수정해줘야한다는 단점 */
+/* width: 33.3333333%;
+    padding: 0 15px;
+}
+
+
+.dtainer figure img {
+    max-width: 100%;
+} */
+
+
+.basic {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.basic .container {
+    gap: 30px
+}
+
+/* 박스 이름을 section으로 통일해서 여기다가 한 번만 설정값을 주면 section이 들어가는 박스의 h2,p는 다 바뀜 */
+section h2 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+section p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+}
+
+.basic figure {
+    flex: 1;
+
+    /* 박스 안에 그대로 있도록 하기 위해서 하는 명령어 이까지만 해도 글자를 가림 이걸 해결하기 위해서 이미지를 감싼 박스(inbox)를 이용함*/
+    overflow: hidden;
+}
+
+.basic figure .inbox {
+    overflow: hidden;
+    border-radius: 61% 39% 70% 30% / 63% 76% 24% 37%;
+    transition: 0.5s 0.5s;
+    /* 글과 이미지 사이의 간격을 주기 위해서 넣음 */
+    margin: 0 0 30px 0;
+}
+
+.basic figure:hover .inbox {
+    border-radius: 0%;
+}
+
+.basic figure img {
+    transition: 0.5s;
+}
+
+
+.basic figure:hover img {
+    transform: scale(1.25);
+
+}
+
+/* 여기까지 했을때 아직까지 이미지가 넘치고 난리가남
+이걸 해결하려고 reset.css에다가 max-width:100%를 준다.
+이렇게 하면 사진 갯수가 늘어나도 자연스럽게 중앙 배치 등이 된다.*/
+
+.basic figure strong {
+    /* 스트롱은 인라인이라서...?박스를 밑으로 내려서 꽉 채워서 늘어나게 만듦...? more과 문단을 나누기 위해서 넣은 명령어 */
+    display: block;
+    margin: 0 0 20px 0;
+}
+
+.basic figure a {
+    /* a도 인라인의 속성을 가지고 있음 인라인 블락을 넣어주면 마진 패딩 라인헤이트 먹이기 가능*/
+    display: inline-block;
+    background: #333;
+    /* line-height: 30px; 라인 헤이트가 잘 안먹어서 그냥 패딩으로만 하기로 함 */
+    color: #fff;
+    /* 패딩을 조정해서 텍스트 '더보기'를 가운데로 배치하면 좋은점은 '더보기'의 글자수가 늘어나도 자동으로 조정이 된다! */
+    padding: 5px 20px 10px 20px;
+}
+
+/* ---------이제 하단부로 갑니다--------- */
+
+.fixed_bg {
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    /* center/cover는 이미지 중앙을 중심으로 박스를 가득 채우라는 말 */
+    background: url(../img/mainvisual01.jpg) no-repeat fixed center top/cover;
+    /* 이것도 인터넷익스플로러에서 안먹음 */
+    filter: grayscale(0.75);
+    /* 이걸 주면 top/cover가 소용이 없어짐 이건 사실 bcackground url의 축약형 */
+    /* background-attachment: fixed; */
+}
+
+.fixed_bg i {
+    padding: 10px;
+    background: #333;
+    margin: 3px 0 0 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.fixed_bg span {
+    vertical-align: middle;
+}
+
+
+/* ------------동영상 넣기 1---------- */
+.movie {
+    padding: 100px 0;
+}
+
+.movie .container {
+    gap: 50px;
+}
+
+.movie .container figure {
+    flex: 1;
+}
+
+.movie .container .dec {
+    flex: 1;
+    /* display: flex; */
+    padding: 100px 0;
+
+}
+
+.movie video {
+    max-width: 100%;
+}
+
+/* inline-block의 특성 상 두개가 약간 떨어져있는데 공간을 없애려면 그냥 html에서 붙여쓰면 됨 하지만 이 방법보다는 css를 써서 margin을 조정해서 예쁘게 만들기 */
+.movie .dec i {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin: 0 5px 0 0;
+}
+
+/* ------------동영상 넣기 2---------- */
+
+.utube {
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+    filter: grayscale(1);
+}
+
+.utube i {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 5px;
+    font-size: 25px;
+    /* 커서!!! 손모양!! */
+    cursor: pointer;
+}

@@ -1,0 +1,65 @@
+/* 폰트는 두 개 사용했고(구글 웹폰트에서) 아이콘은 xeicon */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+
+/* font-family: 'Nanum Myeongjo', serif; 나눔명조 쓰려면 복사해서 사용*/
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #ddd;
+}
+
+main {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 100px 0;
+    text-align: center;
+    gap: 30px
+}
+
+.container h2 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.container p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+}
+
+
+.save_video {
+    padding: 100px 0;
+}
+
+.save_video .container {
+    gap: 60px;
+    display: flex;
+}
+
+.save_video .container figure {
+    flex: 1;
+}
+
+.save_video .container .dec {
+    flex: 1;
+    padding: 30px 0;
+}
+
+.save_video video {
+    max-width: 100%;
+}
+
+.save_video .dec i {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin: 0 5px 0 0;
+}
