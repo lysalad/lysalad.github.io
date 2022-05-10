@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0506 해본것들 천천히 다 적용해보기</title>
+    <link rel="stylesheet" href="./trn01/css/reset.css">
+    <style>
+        .section01 {
+            position: relative;
+        }
+
+        .top_banner {
+            font-size: 8px;
+            color: #f00;
+            background: #ddd;
+            width: 1500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 30px 30px;
+
+        }
+
+        .top_banner .container {
+            margin: 0 auto;
+            width: 1200px;
+            height: 400px;
+            background-image: url(/cat_banner.png);
+            background-repeat: none;
+            background-position: center;
+        }
+
+        .gnb h1 {
+            color: black;
+            font-size: 35px;
+            font-weight: 500;
+            text-align: center;
+            top: 50%;
+            bottom: 0;
+
+        }
+
+        .section01 button {
+            position: absolute;
+            bottom: -30px;
+            right: 120px;
+        }
+
+        .section01 button.on {
+            transform: rotate(180deg);
+            transition: 0.5s;
+        }
+
+
+        .gnb h1 {
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+        }
+
+        /* 여기서부터 position:absolute와 position:realtive가 너무 많이 나와서 정신이 없다 @.@ */
+        nav {
+
+            background: skyblue;
+            /* 여기 position:relative는 어디 absoute의 짝지인지...,, 이름표 좀 달고 다닙시다 */
+            position: relative;
+            /* 아마 여기 position:relative;는 아마도 저기 before absolute의 짝지인것같다 */
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            /* z-index가 무엇인지 알아 봅시다.. */
+            z-index: 999;
+        }
+
+        nav>ul {
+            /* 메뉴라는 박스 자체를 가로 중앙에 배열하고 각 메뉴 사이의 간격을 조정하며
+            텍스트까지 중앙정렬해서 가로 배치 중앙에 오도록 한다 */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+
+        nav>ul>li {
+            position: relative;
+            /* 이 line-height:;는 또 어디서 튀어나온 것인가,,,,,,,,,,,이렇게 점프스퀘어가 많을일??? */
+            line-height: 80px;
+            color: darkblue;
+
+        }
+
+        /* 다단메뉴 만들때는 이름과 position relative와 absolute를 잘 살펴보자 */
+        nav>ul>li ul {
+            /* 바로 위의 relative와 짝지 */
+            position: absolute;
+            justify-content: center;
+            top: 81px;
+            left: 20px;
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+            background: #ddd;
+            z-index: 999;
+        }
+
+        /* 이제 마우스를 올렸을때 보이게 만드는 단계 ! ! !  */
+
+        /* 우선 hover를 사용할 위치를 잡아준다. */
+
+
+        nav>ul>li:hover ul {
+            height: 300px;
+        }
+
+        nav>ul::before {
+            position: absolute;
+            top: 81px;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 0px;
+            background: #ddd;
+            transition: 0.5s;
+        }
+
+        nav>ul:hover::before {
+            height: 300px;
+        }
+
+
+        .content {
+            padding: 80px;
+        }
+
+        .content h2 {
+            color: blue;
+            font-size: 34px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .content p {
+            padding: 30px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: 400px;
+        }
+
+        .img_container {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .img_container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            gap: 30px
+        }
+
+        .img_container .inbox {
+            overflow: hidden;
+        }
+
+        .img_container img {
+            transition: 1s;
+
+        }
+
+        .img_container .inbox:hover img {
+            transform: scale(1.4);
+            transition: 0.5s;
+        }
+
+        .img_container2 {
+            padding: 100px 0;
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+            background: #ddd;
+        }
+
+
+        .img_container2 figure {
+            position: relative;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+
+        .img_container2 figure a {
+            position: absolute;
+            color: #f00;
+
+            bottom: -38px;
+            left: 50px;
+            transition: 0.5s;
+            border: 1px solid #333;
+
+            left: 50%;
+            padding: 10;
+
+        }
+
+        .img_container2 figure:hover a {
+            bottom: 0;
+        }
+
+        .img_container3 {
+            padding: 100px 0;
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            gap: 30px
+        }
+
+
+        .img_container3 figure {
+            position: relative;
+        }
+
+        .img_container3 figure .inbox3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid #333;
+            border-left: 1px solid #333;
+            box-sizing: border-box;
+            opacity: 0;
+        }
+
+        .img_container3 figure .inbox3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid #333;
+            border-left: 1px solid #333;
+            transition: 0.3s 0.3s;
+            box-sizing: border-box;
+            opacity: 0;
+        }
+
+        .img_container3 figure .inbox3:hover::before,
+        .img_container3 figure .inbox3::after {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+
+        .popup {
+            /* absolute와 fixed도 짝꿍인가? */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 350px;
+            height: 400px;
+            background: #ff0;
+            transform: translate(-50%, -50%);
+        }
+
+        .popup button {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .slide_banner {
+            /* absolute와 fixed의 차이 알아보기 */
+            position: fixed;
+            width: 350px;
+            height: 400px;
+            right: -300px;
+            top: 300px;
+            background: #369;
+            transition: 0.5s;
+        }
+
+        .slide_banner.on {
+            right: 0;
+        }
+
+        .slide_banner button {
+            transition: 0.5s;
+        }
+
+        .slide_banner.on button {
+            transform: rotate(180deg);
+        }
+
+        .totop {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            padding: 20px;
+            color: #fff;
+            background: #333;
+            font-size: 30px;
+            border-radius: 50%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="section01">
+        <div class="top_banner"> 배경 회색이 top_banner
+            <div class="container">
+                <span>
+                    <h1><strong>0506에 너무 많은 걸 배웠습니다~ 나는 이해를 다 못해 빡대갈</strong></h1>
+                </span>
+            </div>
+        </div>
+        <button>
+            <i class="xi-caret-up xi-2x"></i>
+        </button>
+    </div>
+
+    <hr>
+    <div class="gnb">
+        <h1>다단 메뉴는 여기다가~</h1>
+        <nav>
+            <ul>
+                <li><a href="">고양이 밥 메뉴</a>
+                    <ul>
+                        <li><a href="">메뉴1</a></li>
+                        <li><a href="">메뉴2</a></li>
+                        <li><a href="">메뉴3</a></li>
+                        <li><a href="">메뉴4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="">고양이 간식 메뉴</a>
+                    <ul>
+                        <li><a href="">메뉴1</a></li>
+                        <li><a href="">메뉴2</a></li>
+                        <li><a href="">메뉴3</a></li>
+                        <li><a href="">메뉴4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="">고양이 장난감 메뉴</a>
+                    <ul>
+                        <li><a href="">메뉴1</a></li>
+                        <li><a href="">메뉴2</a></li>
+                        <li><a href="">메뉴3</a></li>
+                        <li><a href="">메뉴4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="">고양이 털 메뉴</a>
+                    <ul>
+                        <li><a href="">메뉴1</a></li>
+                        <li><a href="">메뉴2</a></li>
+                        <li><a href="">메뉴3</a></li>
+                        <li><a href="">메뉴4</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="section02">
+            <div class="content">
+
+                <h2>
+                    고양이는 귀엽다! 짱귀엽다!
+                </h2>
+                <p>고양이는 너무너무 귀여워서 세상을 지배할것이다. 강아지들과 힘을 합하면 더 빠른 시간 내에 세상을 지배할 것이다.<br>
+                    착한 냥님들과 멍님들이 아직까지 인간을 잘 봐주고 있다. 우리도 잘해야 한다.<br>
+                    그렇지 않으면 세상은 귀여움을 잃게되고 멸망한당..,,,<br>
+                    <strong>근데 여기 메뉴로 덮이면 원래 안보이는거 맞는지 모르겠당,, 아님 말구 머</strong>
+                </p>
+
+            </div>
+
+            <div class="img_container">
+                <figure>
+                    <div class="inbox">
+                        <img src="./고영이5.jpg" alt="">
+                    </div>
+                    더볼수없음
+                </figure>
+
+                <figure>
+                    <div class="inbox">
+                        <img src="./고영이2.jpg" alt="">
+                    </div>
+                    더볼수없음
+                </figure>
+
+                <figure>
+                    <div class="inbox">
+                        <img src="./고영이3.jpg" alt="">
+                    </div>
+                    더볼수없음
+                </figure>
+            </div>
+        </div>
+
+
+        <div class="img_container2">
+            <figure>
+                <div class="inbox2">
+                    <img src="./고영이6.jpg" alt="">
+                </div>
+                <a href=""><i class="xi-heart xi-2x"></i></a>
+            </figure>
+
+            <figure>
+                <div class="inbox2">
+                    <img src="./강아지1.jpg" alt="">
+                </div>
+                <a href=""><i class="xi-heart xi-2x"></i></a>
+            </figure>
+
+            <figure>
+                <div class="inbox2">
+                    <img src="./고영이7.jpg" alt="">
+                </div>
+                <a href=""><i class="xi-heart xi-2x"></i></a>
+            </figure>
+        </div>
+
+        <div class="img_container3">
+            <figure>
+                <div class="inbox3">
+                    <img src="./고영이8.jpg" alt="">
+                </div>
+
+            </figure>
+
+            <figure>
+                <div class="inbox3">
+                    <img src="./고영이9.jpg" alt="">
+                </div>
+
+            </figure>
+
+            <figure>
+                <div class="inbox3">
+                    <img src="./강아지1.jpg" alt="">
+                </div>
+
+            </figure>
+        </div>
+    </div>
+
+
+
+    <div class="slide_banner">
+        <button>
+            <i class="xi-arrow-left"></i>
+        </button>
+    </div>
+
+
+    <div class="popup01 popup">
+        <button>닫기</button>
+    </div>
+
+    <div class="popup02 popup">
+        <button>닫기</button>
+    </div>
+
+    <div class="popup03 popup">
+        <button>닫기</button>
+    </div>
+
+    <i class="xi-arrow-top totop xi-2x"></i>
+
+
+    <script src="./trn01/js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        // 왜 1회용인지 선생님께 여쭤보장 ^^...
+        $('.section01 button').on('click', function () {
+            $('.top_banner').slideToggle();
+            $().toggleClass('on')
+        })
+
+        $('.popup button').on('click', function () {
+            $(this).parent().hide();
+        })
+
+        $('.slide_banner button').on('click', function () {
+            $(this).parent().toggleClass('on')
+        })
+
+        $('.totop').on('click', function () {
+            $('html,body').animate({ scrollTop: 0 }, 1000)
+        })
+
+        $(window).on('scroll', function () {
+            let sct = $(window).scrollTop();
+            if (sct > 300) {
+                $('.totop').fadeIn();
+            }
+            else {
+                $('.totop').fadeOut();
+            }
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
