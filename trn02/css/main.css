@@ -533,11 +533,15 @@ section p {
 
 /* -------new 배너 만들기-------- */
 
+.product_list h2 {
+    position: relative;
+}
+
 .product_list small {
     position: absolute;
     background: #dc3545;
     top: 70px;
-    right: 160px;
+    left: 1000px;
     /* border-top: 30px solid #dc3545;
     border-right: 30px solid transparent;
     border-bottom: 30px solid #dc3545;
