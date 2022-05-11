@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0509~0510종합-여러가지 기능 웹페이지</title>
+    <title>0509~0511종합-여러가지 기능 웹페이지</title>
 
     <!-- 첫자리 reset과 끝자리 main은 자리를 지켜줘야 함 -->
     <link rel="stylesheet" href="./css/reset.css">
@@ -34,6 +34,7 @@
                     <i class='xi-close'></i>
                 </div>
             </div>
+
 
             <div class="gnb">
                 <div class="container">
@@ -78,6 +79,7 @@
             </div>
         </header>
 
+
         <!-- 슬릭으로 이미지를 돌리는게 아니라 배경을 돌린다! 이름을 잘 잡아주는 게 중요하다. -->
         <main>
             <div class="section main_visual">
@@ -107,9 +109,9 @@
                             <a href="">more</a>
                         </div>
                     </figure>
-
                 </div>
             </div>
+
 
             <!-- ---------여기서부터 제품 확대--------- -->
 
@@ -132,13 +134,14 @@
                     </figure>
 
 
+                    <!-- 여기 박스를 이상하게 지정해놔서 오류가 생김! 수정!! -->
                     <figure>
                         <div class="inbox">
                             <img src="./img/lesedilarona02.jpg" alt="">
+                        </div>
 
-
-                            <strong>스톤 그리고 색상들의 멋진 조합</strong>
-                            <a href="">더 보기</a>
+                        <strong>스톤 그리고 색상들의 멋진 조합</strong>
+                        <a href="">더 보기</a>
                     </figure>
 
 
@@ -158,6 +161,7 @@
 
             </section>
 
+
             <!-- ---------여기서부터 하단부 고정된 배경으로 예쁘게 꾸미는거--------- -->
 
             <section class="fixed_bg">
@@ -170,6 +174,7 @@
                 <i class="xi-arrow-right"></i>
 
             </section>
+
 
 
             <!-- ---------동영상 들어가는 부분1 컴퓨터에 저장되어있는 동영상 넣기--------- -->
@@ -191,7 +196,6 @@
 
 
 
-
             <!-- ---------동영상 들어가는 부분2 youtube 동영상 넣기--------- -->
 
             <section class="utube">
@@ -208,27 +212,199 @@
 
             <!-- id값: data-property="{videoURL:'https://youtu.be/TaCdAscgpU0',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div> -->
 
+
+            <section class="product_list">
+
+                <h2>JEWELLERY COLLECTION EVENT<small><span>NEW</span></small></h2>
+                <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
+
+
+                <!-- container가 계속 문제가 될건데 flex하고 slick_slider가 궁합이 안맞기 때문이다! 그래서 과감하게 div 하나만 쓰기 container 없이-->
+
+
+                <div class="product_slider">
+
+                    <figure>
+                        <div class="box">
+                            <img src="./img/lesedilarona01.jpg" alt="">
+                        </div>
+                        <strong>JEWELLERY</strong>
+                    </figure>
+
+                    <figure>
+                        <div class="box">
+                            <img src="./img/lesedilarona01.jpg" alt="">
+                        </div>
+                        <strong>JEWELLERY</strong>
+                    </figure>
+
+                    <figure>
+                        <div class="box">
+                            <img src="./img/lesedilarona02.jpg" alt="">
+                        </div>
+                        <strong>JEWELLERY</strong>
+                    </figure>
+
+                    <figure>
+                        <div class="box">
+                            <img src="./img/lesedilarona03.jpg" alt="">
+                        </div>
+                        <strong>JEWELLERY</strong>
+                    </figure>
+
+                    <figure>
+                        <div class="box">
+                            <img src="./img/lesedilarona04.jpg" alt="">
+                        </div>
+                        <strong>JEWELLERY</strong>
+                    </figure>
+
+                    <figure>
+                        <div class="box">
+                            <img src="./img/lesedilarona05.jpg" alt="">
+                        </div>
+                        <strong>JEWELLERY</strong>
+                    </figure>
+
+                    <figure>
+                        <div class="box">
+                            <img src="./img/lesedilarona06.jpg" alt="">
+                        </div>
+                        <strong>JEWELLERY</strong>
+                    </figure>
+
+                </div>
+
+                <i class="xi-arrow-left s_left"></i>
+                <i class="xi-arrow-right s_right"></i>
+
+            </section>
+
+
+
+            <section class="tab">
+
+                <div class="container">
+
+                    <div class="tab_wrap">
+
+                        <ul class="tab_link">
+                            <li class="on">menu01</li>
+                            <li>menu02</li>
+                            <li>menu03</li>
+                        </ul>
+
+                        <ul class="tab_content">
+                            <li class="on">
+                                <!-- dl, dd도 다 정해져있는 태그! -->
+                                <dl>
+                                    <dd>
+                                        <strong>서울특별시 서초구 남부순환로 2620(양재동 11-149번지) 2620(양재동11-149번지)서울특별시</strong>
+                                        <span>2022.12.24</span>
+                                    </dd>
+
+                                    <dd><strong>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</strong><span>2022.12.24</span></dd>
+                                    <dd><strong>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</strong><span>2022.12.24</span></dd>
+                                    <dd><strong>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</strong><span>2022.12.24</span></dd>
+                                    <dd><strong>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</strong><span>2022.12.24</span></dd>
+                                </dl>
+                            </li>
+                            <li>02</li>
+                            <li>03</li>
+
+                        </ul>
+
+                    </div>
+
+                    <figure>
+                        <img src="./img/mainvisual01.jpg" alt="">
+                    </figure>
+                </div>
+
+            </section>
+
         </main>
 
+        <!-- 여기가 wrap의 끝! -->
 
 
 
         <footer class="footer">
 
+            <div class="footer_top container">
+
+                <ul>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보 취급방침</a></li>
+                    <li><a href="">방문 예약하기</a></li>
+                    <li><a href="">사이즈 가이드</a></li>
+                    <li><a href="">그라프 하우스 소개</a></li>
+                    <li><a href="">문의하기</a></li>
+                </ul>
+
+
+                <div class="sns">
+
+                    <a href=""><i class="xi-kakaotalk"></i></a>
+                    <a href=""><i class="xi-facebook"></i></a>
+                    <a href=""><i class="xi-naver"></i></a>
+
+                </div>
+
+
+            </div>
+
+            <!-- hr을 쓰는 건 신중하게! -->
+            <hr>
+
+
+            <address class="footer_bottom container">
+
+                <div class="left">
+                    전화번호 : <a href="tel:010-1234-5678">010-1234-5678 </a>
+                    e-mail: <a href="e-mil:dobia23@naver.com">dobia23@naver.com</a>
+                    Graff France Headquarters 237 rue Saint-Honore
+                    Paris 75001
+                </div>
+
+
+                <div class="right">
+
+                    <select id="link">
+
+                        <option value="">Family Link</option>
+                        <option value="http://naver.com">naver</option>
+                        <option value="http://daum.net">daum</option>
+                        <option value="http://google.com">google</option>
+
+                    </select>
+
+                </div>
+
+            </address>
 
         </footer>
 
-        <!-- 여기가 wrap의 끝! -->
     </div>
-
-
-
 
     <!-- src는 소스의 줄임말이군!! 여기도 순서를 잘 봐두고 지켜두기!-->
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/jquery.mb.YTPlayer.min.js"></script>
     <script src="./js/main.js"></script>
+
+
+
+
+
+
 </body>
+
+
+
+
+<!-- 여기가 wrap의 끝! -->
+
+
 
 </html>
