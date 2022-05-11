@@ -10,34 +10,40 @@ body {
     background: #ddd;
 }
 
+/* Wrap 안에서 모든걸 다 싸는 박스 여기에 position:relative 값을 줬다. */
 main {
     position: relative;
     width: 1200px;
     margin: 0 auto;
 }
 
-.container {
+/* 이 부분은 .save_video나 container나 상관 없는 듯 */
+.save_video {
     padding: 100px 0;
     text-align: center;
     gap: 30px
 }
 
-.container h2 {
+/* .container {
+    padding: 100px 0;
+    text-align: center;
+    gap: 30px
+} */
+
+
+/* .dec이나 .container나 상관없는 듯 */
+main h2 {
     font-size: 21px;
     font-weight: 700;
     margin: 0 0 10px;
 }
 
-.container p {
+main p {
     font-size: 15px;
     font-weight: 300;
     margin: 0 0 30px 0;
 }
 
-
-.save_video {
-    padding: 100px 0;
-}
 
 .save_video .container {
     gap: 60px;
@@ -63,3 +69,8 @@ main {
     color: #fff;
     margin: 0 5px 0 0;
 }
+
+/* 이렇게 다 해놓고 또 보면 알겠는데 막상 내가 하려니까 잘 안되는 이것,, 연습하자,,,, */
+
+
+/* ---------------여기서부터는 유튜브 동영상 넣기---------------- */

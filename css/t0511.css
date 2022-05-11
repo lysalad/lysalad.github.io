@@ -1,0 +1,100 @@
+/* 폰트는 두 개 사용했고(구글 웹폰트에서) 아이콘은 xeicon */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+
+/* font-family: 'Nanum Myeongjo', serif; 나눔명조 쓰려면 복사해서 사용*/
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #dddd;
+}
+
+
+/* Wrap 안에서 모든걸 다 싸는 박스 여기에 position:relative 값을 줬다. */
+main {
+
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.product_list h2 {
+    font-size: 23px;
+    font-weight: 500;
+    padding: 0 0 7px 0;
+}
+
+.product_list {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+}
+
+
+.product_list .center {
+    width: 1220px;
+    margin: 0 auto;
+}
+
+.product_list .center figure {
+    padding: 0px 15px;
+}
+
+
+.product_list i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    padding: 15px;
+    color: #fff;
+    font-size: 40px;
+}
+
+.product_list .s_left {
+    margin: 0 0 0 -670px;
+
+}
+
+.product_list .s_right {
+    margin: 0 0 0 670px;
+}
+
+.product_list .slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0 0 0;
+
+}
+
+.product_list .slick-dots li {
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.product_list .slick-dots li.slick-active {
+    background: #dc3545;
+}
+
+.product_list .slick-dots button {
+    display: none;
+
+}
+
+.product_list .box {
+    margin: 0 0 20px 0;
+}
+
+
+.product_list figure img {
+    padding: 30px 0;
+    transition: 0.5s;
+}
+
+.product_list figure.on.slick-center img {
+    transform: scale(1.25);
+}
