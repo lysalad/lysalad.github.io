@@ -532,25 +532,31 @@ section p {
 }
 
 /* -------new 배너 만들기-------- */
+
 .product_list small {
-    position: relative;
-    display: inline-block;
-    border-top: 30px solid #dc3545;
+    position: absolute;
+    background: #dc3545;
+    top: 70px;
+    right: 160px;
+    /* border-top: 30px solid #dc3545;
     border-right: 30px solid transparent;
     border-bottom: 30px solid #dc3545;
-    border-left: 80px solid #dc3545;
-    width: 0;
-    height: 0;
+    border-left: 80px solid #dc3545; */
+    width: 45px;
+    height: 30px;
     /* box-sizing: content-box; */
+    border: 1px solid #f00;
+    border-radius: 50%;
 }
 
 .product_list span {
-    position: absolute;
-    top: -10px;
-    left: -70px;
+
+    /* top: -10px;
+    left: -70px; */
     /* 인라인이라서 패딩이 적용이 안되긴 하네... */
-    padding: 2px 0px 0px 10px;
-    color: #dee2e6;
+    padding: 3px, 0, 1px, 0;
+    color: #333;
+    font-size: 13px;
 }
 
 
@@ -584,7 +590,7 @@ section p {
 }
 
 .tab_link>li.on {
-    background: #f00;
+    background: #dc3545;
 }
 
 .tab_link>li~li {
