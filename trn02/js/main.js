@@ -16,14 +16,15 @@ $(function () {
         current.addClass('on').siblings().removeClass('on');
     });
 
+
     $('.main_slider').slick({
         arrows: false,
         dots: true,
         autoplay: true,
-        // 기본옵션 상 마우스를 올렸을땐 화면이 slick 하지 않음. 그래서 넣어주는 말.
         pauseOnHover: false,
         pauseOnFocus: false,
     });
+
 
     // F12콘솔로그에서 변화를 확인가능
 
@@ -68,15 +69,26 @@ $(function () {
     /////////////////////슬릭을 이용한 제품 슬라이드와 확대/////////////////////////
 
 
-    $('.product_slider').slick(
-        {
-            slidesToShow: 5,
-            centerMode: true,
-            arrows: false,
-            dots: true,
-            autoplay: true,
 
-        });
+    $('.product_slider').slick({
+        slidesToShow: 5,
+        centerMode: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+
+        ]
+
+    });
+
 
     $('.product_list .s_left').on('click', function () {
         $('.product_slider').slick('slickPrev');
@@ -107,6 +119,12 @@ $(function () {
         if (lik) window.open(lik)
     })
 
+
+    $('.mbtn').on('click', function () {
+        $('nav').toggleClass('on')
+        $(this).toggleClass('is-active')
+
+    })
 
 
     /////////////////////////////////////////////////////
