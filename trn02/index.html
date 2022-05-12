@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/slick.css">
     <link rel="stylesheet" href="./css/jquery.mb.YTPlayer.min.css">
+    <link rel="stylesheet" href="./css/mobile_button.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -54,6 +55,15 @@
                         </ul>
                     </nav>
                     <!-- 첫등장! 본게임에서 자주 볼 기능이라서 지금은 넘어간당~ ""안에 넣으면 거기로 이동하거나 데이터베이스를 찾는다 id=서치폼은 머지?-->
+
+
+                    <!-- 조나선 씨의 햄버거 버튼 CSS를 가져와보았읍니다 -->
+                    <div class="hamberger mbtn hamburger--collapse" type="button">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </div>
+
                     <form action="javascript:formSumit()" id="searchForm">
                         <!-- 만들고나니깐 뭔가 검색할 수 있는 틀이 생겼음! 신기해! -->
                         <input type="text">
@@ -73,7 +83,6 @@
                                 }
                             }
                         </script>
-
                     </form>
                 </div>
             </div>
@@ -83,7 +92,7 @@
         <!-- 슬릭으로 이미지를 돌리는게 아니라 배경을 돌린다! 이름을 잘 잡아주는 게 중요하다. -->
         <main>
             <div class="section main_visual">
-                <div class="main_slider">s
+                <div class="main_slider">
                     <figure class="itm01">
                         <div class="container">
                             <h3>JEWELLERY COLLECTION EVENT</h3>
@@ -213,12 +222,14 @@
             <!-- id값: data-property="{videoURL:'https://youtu.be/TaCdAscgpU0',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div> -->
 
 
+            <!-- ---------제품 슬라이드  slick 사용--------- -->
+
             <section class="product_list">
 
                 <h2>JEWELLERY COLLECTION EVENT</h2>
                 <small><span>NEW</span></small>
                 <p>모던하면서도 클래식한 디자인들을 완벽하게 표현한 그라프 하우스의 시그너쳐 컬렉션은 다양한 컷, 스톤 그리고 색상들을 멋진 조합으로 선사합니다.</p>
-                
+
 
                 <!-- container가 계속 문제가 될건데 flex하고 slick_slider가 궁합이 안맞기 때문이다! 그래서 과감하게 div 하나만 쓰기 container 없이-->
 
@@ -281,7 +292,7 @@
 
             </section>
 
-
+            <!-- ---------하단 게시판--------- -->
 
             <section class="tab">
 
@@ -326,9 +337,9 @@
 
         </main>
 
-        <!-- 여기가 wrap의 끝! -->
 
 
+        <!-- ---------하단 게시판--------- -->
 
         <footer class="footer">
 
@@ -386,6 +397,9 @@
 
         </footer>
 
+
+        <!-- 여기가 wrap의 끝! -->
+
     </div>
 
     <!-- src는 소스의 줄임말이군!! 여기도 순서를 잘 봐두고 지켜두기!-->
@@ -404,7 +418,6 @@
 
 
 
-<!-- 여기가 wrap의 끝! -->
 
 
 
