@@ -17,6 +17,33 @@ body {
     margin: 0 auto;
 }
 
+/* 처음 만들때부터 class를 잘 만들어놓으면 일이 훨씬 편해진다!! */
+
+@media (max-width:768px) {
+    .container {
+        width: auto;
+        /* column으로 flex의 방향으로 세로로 만들어줌 */
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    h2 {
+        padding: 0 15px;
+    }
+
+    p {
+        padding: 0 15px;
+        line-height: 1.618;
+    }
+
+    .container h2,
+    .container p {
+        padding: 0 0;
+    }
+}
+
+
+
 .top_banner {
     /* padding값은 포토샵으로 알 수 있음 */
     padding: 25px 0;
@@ -59,10 +86,44 @@ body {
     right: 0%;
     padding: 10px;
     background: #333;
-    /* border-radius: 50%; */
     color: #f1f1f1;
-    /* cursor 이건 머지...? */
     cursor: pointer;
+}
+
+
+/* 화면이 작아졌을때는 탑배너 자체를 팝업으로 쓰려고 함 */
+@media (max-width:768px) {
+
+    .top_banner {
+
+        /* 팝업을 만드는 공식! */
+        position: absolute;
+        top: 200px;
+        left: 15px;
+        right: 15px;
+        padding: 25px 15px;
+        z-index: 1000;
+    }
+
+    .top_banner h2 {
+        font-size: 20px;
+        margin: 0 0 10px 0;
+    }
+
+    .top_banner p {
+        font-size: 13px;
+        line-height: 1.56;
+        margin: 20px 0 0 0;
+    }
+
+    .top_banner a {
+        padding: 0px 15px 4px 15px;
+        border: 1px solid #333;
+        margin: 20px 0 0 0;
+        display: block;
+        width: 100px;
+    }
+
 }
 
 .header .gnb {
@@ -80,6 +141,35 @@ body {
 .header .gnb form {
     margin: 0 0 0 50px;
 }
+
+.header .mbtn {
+    display: none;
+}
+
+
+@media (max-width:768px) {
+
+    /* 순서 1. 메뉴를 만든다. 2. @media에 집어넣는다. 3. 세부적인 디자인 조정을 한다. 4. 햄버거 버튼을 html로 만들어준다. 자바스크립트로 햄버거버튼을 눌렀을 때 toggleClass로 왼쪽에서 나오도록 한다. */
+
+    .header h1 {
+        padding: 0 15px;
+    }
+
+    .header .mbtn {
+        display: block;
+        position: fixed;
+        padding: 5px 5px;
+        top: 20px;
+        right: 10px;
+        line-height: 1;
+        background: #ddd;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+}
+
+
 
 nav>ul {
     display: flex;
@@ -104,6 +194,7 @@ nav>ul>li~li::before {
     margin: 0 20px;
 }
 
+
 #searchForm input[type='text'] {
     /* 색을 넣으니 검색창 안의 글자가 빨간색이 됨
     color: #f00; */
@@ -120,6 +211,56 @@ nav>ul>li~li::before {
     background: transparent;
     font-size: 30px;
 }
+
+
+@media (max-width:768px) {
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* 이것도 공식! */
+        width: calc(100% - 90px);
+        height: 100vh;
+        background: #fff;
+        border-right: 1px solid #333;
+        z-index: 1000;
+        transition: 0.5s;
+    }
+
+    nav.on {
+        left: 0;
+
+
+    }
+
+    nav>ul {
+        display: flex;
+        flex-direction: column;
+        line-height: 40px;
+        padding: 100px 30px;
+    }
+
+    nav>ul>li {
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav>ul>li>a {
+        display: block;
+    }
+
+    nav>ul>li~li::before {
+        display: none;
+    }
+
+
+    #searchForm {
+        display: none;
+    }
+
+
+}
+
 
 /* 이미지가 아니라 배경이 들어간 박스를 만들어서 배경을 돌린다! 여기서는 배경이 들어간 박스만 만들어주고 돌리는건 js에 가서 한다!*/
 .main_visual figure {
@@ -253,7 +394,7 @@ nav>ul>li~li::before {
     display: block;
     height: 100%;
     width: 0%;
-    background: #f00;
+    background: #dc3545;
 
 }
 
@@ -268,6 +409,131 @@ nav>ul>li~li::before {
     display: none;
 }
 
+
+@media(max-width:768px) {
+
+    .main_visual figure {
+        position: relative;
+        height: calc(100vh - 100px);
+    }
+
+    .main_visual .itm01 {
+        background: url(../img/mainvisual01.jpg) no-repeat left center center/cover;
+    }
+
+    .main_visual .itm02 {
+        background: url(../img/mainvisual02.jpg) no-repeat right center/cover;
+    }
+
+    .main_visual .itm03 {
+        background: url(../img/mainvisual03.jpg) no-repeat right center/cover;
+    }
+
+
+    .main_visual .container {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        right: 15px;
+        transform: translate(0%, -50%);
+        color: #ddd;
+
+    }
+
+    .main_visual figure h3 {
+        font-size: 5.5vw;
+        font-weight: 900;
+        margin: 0 0 20px 0;
+        text-shadow: 0 0 5px #333;
+    }
+
+    .main_visual figure.itm02 h3 {
+        color: #fff;
+        text-shadow: 0 0 5px #fff;
+    }
+
+    .main_visual figure p {
+        font-size: 13px;
+        font-weight: 300;
+        margin: 0 0 20px 0;
+        padding: 0 0;
+
+    }
+
+    .main_visual figure.itm02 p {
+        color: #fff;
+        text-shadow: 0 0 0px #fff;
+    }
+
+    .main_visual figure a {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 300;
+        text-align: center;
+        border: 1px solid #fff;
+        background: #333;
+        padding: 5px 20px 8px 20px;
+    }
+
+    .main_visual figure h3 {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .main_visual figure.on h3 {
+        transform: translateY(0);
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+
+    .main_visual figure p {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .main_visual figure.on p {
+        transform: translateY(0);
+        opacity: 1;
+        transition: 0.5s 0.5s;
+    }
+
+
+    .main_visual figure a {
+
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .main_visual figure.on a {
+        transform: translateY(0);
+        opacity: 1;
+        transition: 0.5s 1s;
+    }
+
+
+    .main_visual .slick-dots {
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .main_visual .slick-dots li {
+
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #333;
+        margin: 0 2px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+
+
+}
 
 /* ---------여기서부터 제품 확대--------- */
 
@@ -402,6 +668,30 @@ section p {
     vertical-align: middle;
 }
 
+@media (max-width:768px) {
+
+    .fixed_bg {
+        padding: 100px 0;
+        text-align: center;
+        color: #fff;
+        background: url(../img/mainvisual01.jpg) no-repeat center top/cover;
+        filter: grayscale(0.75);
+    }
+
+    .fixed_bg i {
+        padding: 10px;
+        background: #333;
+        margin: 5px 0 0 20px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    .fixed_bg span {
+        vertical-align: middle;
+    }
+
+}
+
 
 /* ------------동영상 넣기 1---------- */
 .movie {
@@ -419,7 +709,7 @@ section p {
 .movie .container .dec {
     flex: 1;
     /* display: flex; */
-    padding: 100px 0;
+    padding: 80px 0;
 
 }
 
@@ -563,9 +853,105 @@ section p {
     font-size: 13px;
 }
 
+@media(max-width:768px) {
+
+    .product_list .product_slider {
+        width: auto;
+    }
 
 
-/* --------------- */
+    .product_list .product_slider figure {
+        padding: 0px 15px;
+    }
+
+    .product_list i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, -50%);
+        background: #333;
+        padding: 15px;
+        color: #fff;
+        font-size: 40px;
+    }
+
+    .product_list .s_left {
+        margin: 0 0 0 0px;
+        left: 15px;
+
+    }
+
+    .product_list .s_right {
+        margin: 0 0 0 0px;
+        left: auto;
+        right: 15px;
+    }
+
+    .product_list .slick-dots {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin: 10px 0 0 0;
+
+    }
+
+    .product_list .slick-dots li {
+        width: 10px;
+        height: 10px;
+        background: #333;
+        border-radius: 50%;
+    }
+
+    .product_list .slick-dots li.slick-active {
+        background: #dc3545;
+    }
+
+    .product_list .slick-dots button {
+        display: none;
+
+    }
+
+    .product_list .box {
+        margin: 0 0 20px 0;
+    }
+
+
+    .product_list figure img {
+        padding: 30px 0;
+        transition: 0.5s;
+    }
+
+    .product_list figure.on.slick-center img {
+        transform: scale(1.25);
+    }
+
+
+    .product_list h2 {
+        position: relative;
+    }
+
+    .product_list small {
+        position: absolute;
+        display: none;
+        background: #dc3545;
+        top: 70px;
+        left: 1000px;
+        width: 45px;
+        height: 30px;
+        border: 1px solid #f00;
+        border-radius: 50%;
+    }
+
+    .product_list span {
+
+        padding: 3px, 0, 1px, 0;
+        color: #333;
+        font-size: 13px;
+    }
+}
+
+
+/* -------------하단 게시판------------- */
 
 .tab {
     padding: 100px 0;
@@ -679,10 +1065,42 @@ section p {
 .footer #link {
     background: #111;
     color: #f8f8f8;
-    font-size: 17px;
+    font-size: 15px;
     text-transform: uppercase;
-    height: 22px;
-    padding: 2px 15px;
-    margin: 22px 0 0 -10px;
+    padding: 5px 15px;
     outline: none;
+}
+
+
+@media(max-width:768px) {
+
+    .footer .container {
+        align-items: center;
+        line-height: 1.6;
+        padding: 30px 15px;
+    }
+
+    .footer .footer_top ul {
+        display: inline-block;
+        text-align: center;
+        padding: 0 0 20px 0;
+    }
+
+    .footer .footer_top ul li {
+        display: inline-block;
+        padding: 0 15px;
+    }
+
+    .footer .footer_top ul>li~li::before {
+        display: none;
+
+    }
+
+
+    .footer .left {
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+
+
 }
