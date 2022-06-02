@@ -1,0 +1,15 @@
+public class Book {
+	String title;
+	String author;
+	
+	public void printAll() {
+		System.out.println(title);
+		System.out.println(author);
+	}
+	
+	
+	public void printAll02(String title, String author) {
+		String result = "제목은 " + title + ", 저자는 " + author;
+		System.out.println(result);
+	}
+}

@@ -1,0 +1,4 @@
+
+public class BookEx01 {
+	String title;
+}
