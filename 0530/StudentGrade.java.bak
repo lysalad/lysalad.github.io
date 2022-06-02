@@ -1,0 +1,46 @@
+// 학생
+
+// 이름
+// 국어 점수
+// 영어 점수
+// 수학 점수
+
+// 생성자
+// getter/setter
+
+// 자기 평균 점수를 알려줄 수 있다.
+
+
+class StudentName {
+	String name;
+	
+	public StudentName(String n) {
+		name = n;
+	}
+}
+
+
+class StudentInf {
+	double kor;
+	double eng;
+	double math;
+	int num;
+	
+	public double StudentInf(double k, double e, double m) {
+		kor = k;
+		eng = e;
+		math = m;
+		double sum = k + e + m;
+		return sum;
+	}
+	
+	public double StudentInf(double sum, int num) {
+		return sum / num;
+	}
+}
+
+public static StudentGrade {
+	public static void main(String [] args) {
+		
+	}
+}

@@ -1,0 +1,14 @@
+public class dogTest {
+	public static void main(String [] args) {
+		
+		dog d1 = new dog("초코", "푸들", 7);
+		dog d2 = new dog("예삐", "말티즈");
+		
+		// System.out.println(d1.getName());	
+		// System.out.println(d1.getName());
+
+		d1.printAll();
+		d2.printAll();		
+		
+	}
+}
